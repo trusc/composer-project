@@ -17,7 +17,7 @@
         ]
     },
     "require": {
-        "php": "^7.0",
+        "php": "^7.2",
         "composer/installers": "^1.0",
         "shopware/shopware": "5.6.4",
         "ocramius/package-versions": "1.2.0",
@@ -25,9 +25,9 @@
     },
     "extra": {
         "installer-paths": {
-            "Plugins/Local/Backend/{$name}/": ["type:shopware-backend-plugin"],
-            "Plugins/Local/Core/{$name}/": ["type:shopware-core-plugin"],
-            "Plugins/Local/Frontend/{$name}/": ["type:shopware-frontend-plugin"]
+            "Plugins/Community/Backend/{$name}/": ["type:shopware-backend-plugin"],
+            "Plugins/Community/Core/{$name}/": ["type:shopware-core-plugin"],
+            "Plugins/Community/Frontend/{$name}/": ["type:shopware-frontend-plugin"]
         }
     },
     "include-path": [
@@ -35,12 +35,10 @@
     ],
     "config": {
         "optimize-autoloader": true,
-        "process-timeout": 0
+        "process-timeout": 0,
+        "sort-packages": true
     },
     "scripts": {
-        "post-root-package-install": [
-           "./app/bin/post-install.sh"
-        ],
         "post-install-cmd": [
            "./app/bin/post-install.sh"
         ],
