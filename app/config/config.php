@@ -15,7 +15,7 @@ $projectDir = dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR;
 return array_replace_recursive($this->loadConfig($this->AppPath() . 'Configs/Default.php'), [
 
     'trustedproxies' => explode(',', getenv('TRUSTEDPROXIES')),
-    'db' => [
+    'db'             => [
         'username' => $db['user'],
         'password' => $db['pass'],
         'dbname'   => $db['path'],
@@ -32,29 +32,29 @@ return array_replace_recursive($this->loadConfig($this->AppPath() . 'Configs/Def
          * Only use "composer require some/path" to install plugins into the standard Shopware plugin directories.
          * These directories are all .gitignored to prevent the installed plugins from being added to the VCS.
          */
-        'Default'   => $this->AppPath('Plugins_' . 'Default'),
-        'Local'     => $projectDir . 'Plugins/Local/',
-        'Community' => $projectDir . 'Plugins/Community/',
-        'ShopwarePlugins' => $projectDir .'custom/plugins/',
+        'Default'         => $this->AppPath('Plugins_' . 'Default'),
+        'Local'           => $projectDir . 'Plugins/Local/',
+        'Community'       => $projectDir . 'Plugins/Community/',
+        'ShopwarePlugins' => $projectDir . 'custom/plugins/',
 
         /**
          * Put custom, project specific plugins or plugins bought from the Shopware store FOR THIS SHOP to this directory.
          * They will be added to GIT so you can deploy them with your project.
          */
-        'ProjectPlugins' => $projectDir . 'custom/project/',
+        'ProjectPlugins'  => $projectDir . 'custom/project/',
     ],
 
     'cdn' => [
         'liveMigration' => false,
-        'adapters' => [
+        'adapters'      => [
             'local' => [
                 'path' => $projectDir,
             ],
         ],
     ],
 
-    'app' => [
-        'rootDir' => $projectDir,
+    'app'        => [
+        'rootDir'      => $projectDir,
         /**
          * These parameters were necessary in Shopware 5.4.x and are replaced by the filesystem below in 5.5.x
          */
@@ -78,7 +78,7 @@ return array_replace_recursive($this->loadConfig($this->AppPath() . 'Configs/Def
                 'root' => $projectDir . 'files' . DIRECTORY_SEPARATOR,
             ],
         ],
-        'public' => [
+        'public'  => [
             'config' => [
                 'root' => $projectDir . 'web' . DIRECTORY_SEPARATOR,
             ],
@@ -86,7 +86,7 @@ return array_replace_recursive($this->loadConfig($this->AppPath() . 'Configs/Def
     ],
 
     'web' => [
-        'webDir' => $projectDir . 'web',
+        'webDir'   => $projectDir . 'web',
         'cacheDir' => $projectDir . 'web/cache',
     ],
 ]);
